@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Example"
+             Title="Example">
+    <AbsoluteLayout >
+        <Image
+          Source="farwest.jpg"
+          Aspect="AspectFit"
+          WidthRequest="500"
+          SemanticProperties.Description="The Far Far WEST" />
+
+        <VerticalStackLayout >
+
+            <Label
+                 Text="Welcome To The Far West"
+                 FontSize="40"
+                 FontFamily="Sokum"
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Center" 
+                 HorizontalTextAlignment="Center"
+                 Margin="10"
+                TextColor="black"
+                 />
+
+            <Label 
+                 Text="The Place Where Only The Strong Survive!"
+                 TextColor="black"
+                 FontSize="20"
+                 FontFamily="Sokum"
+                 FontAttributes="Bold"
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Center" />
+
+            <!--hr-->
+            <BoxView BackgroundColor="white" Opacity=".5" HeightRequest="2" CornerRadius="1" Margin="20,5"/>
+            <Button x:Name="btnHide" Clicked="btnHide1_Clicked" WidthRequest="150" ImageSource="hide.png" BackgroundColor="DarkOrange" ContentLayout="Left, 10" HeightRequest="10" FontSize="10" Padding="0" Text="Hide Slide Show" FontAttributes="Bold" CornerRadius="5"/>
+
+            <!-- Slide Show Begins -->
+            <VerticalStackLayout x:Name="layoutSlideShow" HorizontalOptions="Center" >
+                <Button Clicked="Button_Up_Clicked" Text="" FontFamily="Material" FontSize="20" BackgroundColor="#333" TextColor="White" WidthRequest="30" HeightRequest="30" CornerRadius="50" Margin="5" Padding="0">
+                    <Button.Shadow>
+                        <Shadow Brush="Black" Opacity=".7" Offset="0,0"/>
+                    </Button.Shadow>
+                </Button>
+                <Border StrokeThickness="2" Stroke="black" WidthRequest="120"  HeightRequest="100">
+                    <Image 
+                        x:Name="imgSlideShow" 
+                        
+                         Aspect="AspectFill"/>
+                </Border>
+                <Button Clicked="Button_Down_Clicked" Text="" FontFamily="Material" FontSize="20" BackgroundColor="#333" TextColor="White" WidthRequest="30" HeightRequest="30" CornerRadius="50" Margin="5" Padding="0">
+                    <Button.Shadow>
+                        <Shadow Brush="Black" Opacity=".7" Offset="0,0"/>
+                    </Button.Shadow>
+                </Button>
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span TextColor="Orange"  Text="Old price: "/>
+                            <Span TextColor="Orange" FontAttributes="Bold" TextDecorations="Strikethrough" Text="$122"/>
+                            <Span Text="&#10;" />
+                            <Span TextColor="Orange"  Text="New price: "/>
+                            <Span TextColor="Orange" FontAttributes="Bold" Text="$101"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </AbsoluteLayout>
+</ContentPage>
